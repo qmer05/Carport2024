@@ -1,4 +1,4 @@
-package app.config.controllers.customer;
+package app.controllers.customer;
 
 import app.entities.Customer;
 import app.entities.CustomerRequest;

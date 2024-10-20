@@ -146,7 +146,7 @@ public class CustomerRequestMapper {
             insertCustomerRequestStatement.setInt(1, length);
             insertCustomerRequestStatement.setInt(2, width);
             insertCustomerRequestStatement.setInt(3, height);
-            insertCustomerRequestStatement.setDate(4, java.sql.Date.valueOf(date));
+            insertCustomerRequestStatement.setDate(4, Date.valueOf(date));
             int rowsAffected = insertCustomerRequestStatement.executeUpdate();
 
             if (rowsAffected != 1) {
@@ -233,7 +233,7 @@ public class CustomerRequestMapper {
             preparedStatement.setInt(1, length);
             preparedStatement.setInt(2, width);
             preparedStatement.setInt(3, height);
-            preparedStatement.setDate(4, java.sql.Date.valueOf(date));
+            preparedStatement.setDate(4, Date.valueOf(date));
             preparedStatement.setString(5, status);
             preparedStatement.setInt(6, customerId);
 

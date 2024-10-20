@@ -1,4 +1,4 @@
-package app.config.controllers.customer;
+package app.controllers.customer;
 
 import app.controllers.SvgController;
 import app.entities.Carport;

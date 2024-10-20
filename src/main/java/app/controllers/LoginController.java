@@ -1,4 +1,4 @@
-package app.config.controllers;
+package app.controllers;
 
 import app.entities.Admin;
 import app.entities.Customer;

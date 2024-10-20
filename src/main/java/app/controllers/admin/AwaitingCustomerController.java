@@ -1,4 +1,4 @@
-package app.config.controllers.admin;
+package app.controllers.admin;
 
 import app.entities.CustomerRequest;
 import app.entities.Offer;

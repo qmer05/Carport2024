@@ -1,4 +1,4 @@
-package app.config.controllers;
+package app.controllers;
 
 import app.controllers.admin.AdminRequestController;
 import app.entities.Carport;
