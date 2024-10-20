@@ -45,3 +45,4 @@ jobs:
           DB_URL: jdbc:postgresql://localhost:5432/carport
           DB_USER: postgres
           DB_PASSWORD: postgres
+          DB_NAME: carport
