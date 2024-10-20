@@ -39,11 +39,14 @@ jobs:
       - name: Install dependencies
         run: mvn install -DskipTests
 
+      - name: Wait for PostgreSQL to be ready
+        run: sleep 15  # Wait for 15 seconds to ensure PostgreSQL is ready
+
       - name: Run tests
         env:
           DEPLOYED: true  # Signals your application to use the deployed environment
           JDBC_USER: postgres
           JDBC_PASSWORD: postgres
-          JDBC_CONNECTION_STRING: jdbc:postgresql://localhost:5432/
+          JDBC_CONNECTION_STRING: jdbc:postgresql://localhost:5432/carport?currentSchema=public
           JDBC_DB: carport
         run: mvn test
