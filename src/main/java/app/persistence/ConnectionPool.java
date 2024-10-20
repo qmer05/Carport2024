@@ -25,12 +25,14 @@ public class ConnectionPool {
     public static ConnectionPool getInstance() {
         if (instance == null) {
             instance = new ConnectionPool();
-            ds = createHikariConnectionPool(
-                    System.getenv("DB_USER"),
-                    System.getenv("DB_PASSWORD"),
-                    System.getenv("DB_URL"),
-                    System.getenv("DB_NAME")
-            );
+            String user = System.getenv("DB_USER");
+            String password = System.getenv("DB_PASSWORD");
+            String url = System.getenv("DB_URL");
+            String db = System.getenv("DB_NAME");
+
+            Logger.getLogger("web").log(Level.INFO, String.format("Environment variables - DB_USER: %s, DB_PASSWORD: %s, DB_URL: %s, DB_NAME: %s", user, password, url, db));
+
+            ds = createHikariConnectionPool(user, password, url, db);
         }
         return instance;
     }
