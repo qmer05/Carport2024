@@ -1,0 +1,75 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin: 127px;
+}
+
+.standard-carport, .design-carport {
+    width: calc((100% - 50px) / 2);
+    height: 100%;
+    display: flex;
+}
+
+.standard-carport{
+    margin-right: 50px;
+}
+
+.standard-carport > div, .design-carport > div {
+    flex: 1;
+}
+
+.standard-carport-img-side, .design-carport-img-side {
+    position: relative;
+    height: 100%;
+}
+
+.standard-carport-img-side img, .design-carport-img-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.standard-carport-button-side, .design-carport-button-side {
+    display: flex;
+    flex-direction: column;
+    background-color: #336699;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    font-family: Arial;
+    color: white;
+    font-size: 42px;
+}
+
+.carport-button{
+    font-family: Arial;
+    color: white;
+    font-size: 32px;
+    background-color: rgba(35, 47, 156);
+    border-radius: 8px;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+.carport-button:hover{
+    background-color: rgb(47, 75, 184);
+}
+
+.flexbox-carports {
+    margin-top: 30px;
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    width: 80%;
+}
+
+
+

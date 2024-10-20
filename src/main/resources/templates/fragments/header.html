@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:fragment="common_header(title, links)">
+    <title th:text="${title}">FOG Carport Hjemmeside</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../public/css/header-style.css" th:href="@{/css/header-style.css}" rel="stylesheet"/>
+    <th:block th:replace="${links}" />
+</head>
+
+<body>
+<div class="main-header" th:fragment="main-header(user)">
+    <div class="header-left">
+        <th:block th:if="${#strings.equals(user,'customer') || #strings.equals(user,'')}">
+            <a href="../customer/carport-index.html" th:href="@{/carport-index}">
+                <img src="/public/images/fog-logo.png" th:src="@{../images/fog-logo.png}" alt="Fog Logo">
+            </a>
+        </th:block>
+        <th:block th:if="${#strings.equals(user,'admin')}">
+            <a href="../customer/carport-index.html" th:href="@{/loginpage-admin}">
+                <img src="/public/images/fog-logo.png" th:src="@{../images/fog-logo.png}" alt="Fog Logo">
+            </a>
+        </th:block>
+    </div>
+
+    <div class="header-right">
+        <th:block th:if="${#strings.equals(user,'')}">
+            <div class="fog-konto">
+                <a href="../login/login-page.html" th:href="@{/login-page}">
+                    <img src="/public/images/fog-konto.png" th:src="@{../images/fog-konto.png}" alt="Fog Konto">
+                    <span>Fog Konto</span>
+                </a>
+            </div>
+        </th:block>
+
+
+        <th:block th:if="${#strings.equals(user,'customer')}">
+            <div class="fog-konto">
+                <a href="../customer/customer-info-frontpage.html" th:href="@{/customerinfo}">
+                    <img src="/public/images/fog-konto.png" th:src="@{../images/fog-konto.png}" alt="Fog Konto">
+                    <span>Fog Konto</span>
+                </a>
+            </div>
+        </th:block>
+
+        <th:block th:if="${#strings.equals(user,'customer') || #strings.equals(user,'admin')}">
+        <div class="dropdown">
+            <div class="dropdown-img">
+                <img src="/public/images/menu-icon.png" th:src="@{../images/menu-icon.png}" alt="Menu Icon">
+                <span>Menu</span>
+            </div>
+
+            <th:block th:if="${#strings.equals(user,'customer')}">
+                <div class="dropdown-content">
+                    <a th:href="@{/carport-index}">Forside</a>
+                    <a th:href="@{/customer-request-status}">Forespørgsler</a>
+                    <a th:href="@{/viewOrderHistory}">Mine Ordre</a>
+                    <a th:href="@{/logout}">Log ud</a>
+                </div>
+            </th:block>
+
+            <th:block th:if="${#strings.equals(user,'admin')}">
+                <div class="dropdown-content">
+                    <a th:href="@{/loginpage-admin}">Forside</a>
+                    <a th:href="@{/admininquiries}">Forespørgsler</a>
+                    <a th:href="@{/awaitingCustomers}">Afventer Kunder</a>
+                    <a th:href="@{/material}">Materialer</a>
+                    <a th:href="@{/logout}">Log ud</a>
+                </div>
+            </th:block>
+        </div>
+        </th:block>
+
+    </div>
+</div>
+</body>
+</html>
